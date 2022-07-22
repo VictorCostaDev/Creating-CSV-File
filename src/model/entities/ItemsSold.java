@@ -58,5 +58,18 @@ public class ItemsSold {
         bw.close();
     }
 
+    public void WriteItemsInFileTXT(String pathName) throws IOException {
+        scan.nextLine();
+        System.out.print("Nome do arquivo txt: ");
+        String nameFileInTXT = scan.nextLine();
+
+
+        BufferedWriter bw = new BufferedWriter(new FileWriter(pathName + "\\" + nameFileInTXT));
+        for (Item item : items) {
+            bw.write(item.toString());
+            bw.newLine();
+        }
+        bw.close();
+    }
     
 }
