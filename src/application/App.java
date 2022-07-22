@@ -13,7 +13,7 @@ public class App {
         Scanner scan = new Scanner(System.in);
         Locale.setDefault(Locale.US);
 
-        System.out.print("Path do diretório: ");
+        System.out.print("Path onde diretório ficará: ");
         String pathName = scan.nextLine();
         System.out.print("Nome do diretorio: ");
         String nameDirectory = scan.nextLine();
@@ -22,6 +22,9 @@ public class App {
         try {
             boolean sucessDirectory = new File(fullNameDirectory).mkdir(); 
 
+            System.out.print("Criar Arquivo .txt ou csv (t/c): ");
+            char extension = scan.next().charAt(0);
+            
             if (sucessDirectory) {
                 ItemsSold items = new ItemsSold();
                 items.receiveItems();

@@ -29,11 +29,16 @@ public class ItemsSold {
     */
 
     public void receiveItems() {
+        System.out.print("Quantos produtos serão escritos? ");
         int quantityItems = scan.nextInt();
+
         for (int index = 0; index < quantityItems; index++) {
             scan.nextLine();
+            System.out.print("Nome do Produto: ");
             String nameItem = scan.nextLine();
+            System.out.print("Preço do Produto: ");
             double priceItem = scan.nextDouble();
+            System.out.print("Quantidade a comprar do Produto: ");
             int quantityItem = scan.nextInt();
             addItemSold(new Item(nameItem, priceItem, quantityItem));
         }
@@ -52,4 +57,6 @@ public class ItemsSold {
         }
         bw.close();
     }
+
+    
 }
